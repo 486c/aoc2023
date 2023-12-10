@@ -1,20 +1,32 @@
-use std::{fs::File, io::{BufReader, BufRead}, collections::{HashSet, HashMap}};
+use std::collections::{HashSet, HashMap};
 
 use eyre::Result;
 
-fn main() -> Result<()> {
-    let file = File::open("input.txt")?;
-    let reader = BufReader::new(file);
+pub fn run(input: &str) -> u64 {
+    let p2 = part2(input).unwrap();
 
+    p2
+}
+
+pub fn run_debug(input: &str) -> (u64, u64) {
+    let p1 = part1(input).unwrap();
+    let p2 = part2(input).unwrap();
+
+    (p1, p2)
+}
+
+pub fn part1(input: &str) -> Result<u64> {
+    Ok(1)
+}
+
+pub fn part2(input: &str) -> Result<u64> {
     let mut lookup_table: HashSet<usize> = HashSet::new();
     let mut our_numbers: HashSet<usize> = HashSet::new();
 
     let mut copies: HashMap<usize, usize> = HashMap::new();
 
-    for (i, line) in reader.lines().enumerate() {
-        let line = line?;
+    for (i, line) in input.lines().enumerate() {
         let actual_index = i + 1;
-        println!("Card {}", actual_index);
 
         match copies.get(&(i + 1)) {
             Some(count) => copies.insert(actual_index, count + 1),
@@ -77,7 +89,5 @@ fn main() -> Result<()> {
 
     let sum: usize = copies.values().sum();
 
-    println!("Sum: {sum}");
-
-    Ok(())
+    Ok(sum as u64)
 }
