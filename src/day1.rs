@@ -29,7 +29,8 @@ impl LastFirst {
             last: 0,
         }
     }
-
+    
+    #[inline]
     pub fn add_num(&mut self, num: u64) {
         if self.first == 0 {
             self.first = num
@@ -37,7 +38,8 @@ impl LastFirst {
             self.last = num
         }
     }
-
+    
+    #[inline]
     pub fn produce_final_number(&self) -> u64 {
         let mut num = self.first;
 
