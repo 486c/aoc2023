@@ -40,6 +40,8 @@ macro_rules! generate_bench {
 
 generate_bench!(day1);
 generate_bench!(day2);
+generate_bench!(day3);
+generate_bench!(day4);
 
 fn main() {
     divan::main();
