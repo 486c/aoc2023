@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 divan = "0.1.5"
 eyre = "0.6.10"
+paste = "1.0.14"
 
 [[bin]]
 name = "aoc_debugger"
