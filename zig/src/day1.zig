@@ -94,7 +94,7 @@ pub fn run() !void {
 
     //const buff = try std.fs.cwd()
     //.readFileAlloc(alloc.allocator(), "inputs/day1_input.txt", std.math.maxInt(usize));
-    const buff = @embedFile("./inputs/day1_test.txt");
+    const buff = @embedFile("./inputs/day1_input.txt");
 
     var timer = try std.time.Timer.start();
     const res_p1 = part1(buff);
